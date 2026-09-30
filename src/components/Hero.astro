@@ -1,0 +1,90 @@
+---
+import { site } from '../data/site';
+
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+  site.whatsappMessage
+)}`;
+---
+
+<section
+  id="inicio"
+  class="relative min-h-[780px] overflow-hidden bg-[#111318] text-white"
+>
+  <!-- IMAGEN DE FONDO -->
+  <img
+    src="/images/hero/mifarma.jpg"
+    alt="Letrero corporativo realizado por LetreInnova"
+    class="absolute inset-0 h-full w-full object-cover object-center"
+  />
+
+  <!-- CAPA OSCURA -->
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25"
+  ></div>
+
+  <!-- OSCURECIDO GENERAL SUAVE -->
+  <div class="absolute inset-0 bg-black/15"></div>
+
+  <!-- CONTENIDO -->
+  <div
+    class="container-site relative z-10 flex min-h-[780px] items-center pt-32 pb-20"
+  >
+    <div class="max-w-[760px]">
+
+      <div class="mb-6 flex items-center gap-3">
+        <span class="h-[2px] w-10 bg-[var(--brand-orange)]"></span>
+
+        <p class="eyebrow text-white/70">
+          Diseño · fabricación · instalación
+        </p>
+      </div>
+
+      <h1 class="display-title text-balance">
+        Letreros que hacen
+        <span class="text-[var(--brand-orange)]">
+          visible
+        </span>
+        tu marca.
+      </h1>
+
+      <p class="mt-7 max-w-xl text-lg leading-8 text-white/75">
+        Diseñamos, fabricamos e instalamos soluciones publicitarias
+        para negocios y empresas que quieren destacar y convertir
+        su fachada en una herramienta de venta.
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-3">
+
+        <a
+          href="#contacto"
+          rel="noreferrer"
+          class="rounded-full bg-[var(--brand-orange)] px-7 py-4
+                 font-extrabold text-white transition duration-300
+                 hover:-translate-y-1 hover:shadow-xl"
+        >
+          Solicitar cotización
+        </a>
+
+        <a
+          href="#proyectos"
+          class="rounded-full border border-white/30 bg-white/5 px-7 py-4
+                 font-bold text-white backdrop-blur-sm transition duration-300
+                 hover:border-white/60 hover:bg-white/10"
+        >
+          Ver nuestros trabajos
+        </a>
+
+      </div>
+
+      <div
+        class="mt-12 flex flex-wrap gap-x-10 gap-y-4
+               border-t border-white/15 pt-8 text-sm text-white/65"
+      >
+        <span>Atención personalizada</span>
+        <span>Acabados profesionales</span>
+        <span>Lima y alrededores</span>
+      </div>
+
+    </div>
+  </div>
+</section>

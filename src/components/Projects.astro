@@ -1,0 +1,157 @@
+---
+import { projects } from '../data/site';
+
+const layoutClass = {
+  banner: 'project-banner',
+  square: 'project-square',
+  tall: 'project-tall'
+};
+---
+
+<section id="proyectos" data-nav-theme="dark" class="section-pad bg-[#111318] text-white">
+
+  <div class="container-site">
+    <div class="mb-12 grid gap-6 lg:grid-cols-[1fr_.65fr] lg:items-end">
+      <div data-reveal="left">
+        <p class="eyebrow text-[var(--brand-blue)]">Proyectos realizados</p>
+
+        <h2 class="section-title mt-4 max-w-3xl text-balance">
+          Trabajos que hablan por nosotros.
+        </h2>
+      </div>
+
+      <p data-reveal="right" class="max-w-lg text-base leading-7 text-white/55">
+        Una selección de trabajos realizados para negocios y empresas,
+        desde la fabricación hasta la instalación.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="projects-gallery">
+    <div class="projects-bento">
+      {projects.map((project, index) => (
+        <button
+          type="button"
+          data-project-index={index}
+          data-reveal="up"
+          style={`--reveal-delay: ${(index % 4) * 45}ms;`}
+          class={`project-bento-item ${layoutClass[project.layout]}`}
+          aria-label={`Ver proyecto ${project.title}`}
+        >
+          <img src={project.thumb} alt={project.alt} loading="lazy" decoding="async" draggable="false" />
+
+          <div class="project-bento-overlay"></div>
+
+          <div class="project-bento-info">
+            <p>{project.category}</p>
+            <h3>{project.title}</h3>
+          </div>
+        </button>
+      ))}
+    </div>
+  </div>
+
+</section>
+
+
+<dialog id="project-lightbox" class="project-lightbox">
+  <div class="project-lightbox-content">
+
+    <button type="button" id="project-close" class="project-lightbox-close" aria-label="Cerrar imagen">
+      ×
+    </button>
+
+    <button type="button" id="project-lightbox-prev" class="project-lightbox-arrow project-lightbox-prev" aria-label="Proyecto anterior">
+      ←
+    </button>
+
+    <div class="project-lightbox-image-wrapper">
+      <img id="project-lightbox-image" src="" alt="" />
+    </div>
+
+    <button type="button" id="project-lightbox-next" class="project-lightbox-arrow project-lightbox-next" aria-label="Proyecto siguiente">
+      →
+    </button>
+
+    <div class="project-lightbox-footer">
+      <div>
+        <p id="project-lightbox-category"></p>
+        <h3 id="project-lightbox-title"></h3>
+      </div>
+
+      <span id="project-lightbox-counter"></span>
+    </div>
+
+  </div>
+</dialog>
+
+
+<script define:vars={{ projects }}>
+  const visibleProjects = projects;
+
+  const dialog = document.querySelector('#project-lightbox');
+  const image = document.querySelector('#project-lightbox-image');
+  const title = document.querySelector('#project-lightbox-title');
+  const category = document.querySelector('#project-lightbox-category');
+  const counter = document.querySelector('#project-lightbox-counter');
+
+  const closeButton = document.querySelector('#project-close');
+  const previous = document.querySelector('#project-lightbox-prev');
+  const next = document.querySelector('#project-lightbox-next');
+
+  const items = document.querySelectorAll('[data-project-index]');
+
+  let currentIndex = 0;
+
+  const renderProject = () => {
+    const project = visibleProjects[currentIndex];
+
+    if (!project || !image || !title || !category || !counter) return;
+
+    image.src = project.full;
+    image.alt = project.alt;
+    title.textContent = project.title;
+    category.textContent = project.category;
+    counter.textContent = `${currentIndex + 1} / ${visibleProjects.length}`;
+  };
+
+  const openProject = (index) => {
+    currentIndex = index;
+    renderProject();
+    dialog?.showModal();
+  };
+
+  const previousProject = () => {
+    currentIndex = (currentIndex - 1 + visibleProjects.length) % visibleProjects.length;
+    renderProject();
+  };
+
+  const nextProject = () => {
+    currentIndex = (currentIndex + 1) % visibleProjects.length;
+    renderProject();
+  };
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => {
+      openProject(Number(item.getAttribute('data-project-index')));
+    });
+  });
+
+  previous?.addEventListener('click', previousProject);
+  next?.addEventListener('click', nextProject);
+
+  closeButton?.addEventListener('click', () => dialog?.close());
+
+  dialog?.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!dialog?.open) return;
+
+    if (event.key === 'ArrowLeft') previousProject();
+    if (event.key === 'ArrowRight') nextProject();
+    if (event.key === 'Escape') dialog.close();
+  });
+</script>

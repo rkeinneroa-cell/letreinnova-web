@@ -1,0 +1,131 @@
+---
+import { services, site } from '../data/site';
+---
+
+<section
+  id="servicios"
+  data-nav-theme="light"
+  class="section-pad bg-white"
+>
+  <div class="container-site">
+
+    <div
+      class="mb-12 grid gap-5 lg:grid-cols-[.65fr_1.35fr] lg:items-end"
+      data-reveal="up"
+    >
+      <p class="eyebrow text-[var(--brand-orange)]">
+        Nuestros servicios
+      </p>
+
+      <div>
+        <h2 class="section-title text-balance">
+          El letrero correcto para cada tipo de negocio.
+        </h2>
+
+        <p class="mt-5 max-w-2xl text-base leading-7 text-neutral-600">
+          Diseñamos cada propuesta según el espacio, el material,
+          el estilo de la marca y el nivel de visibilidad que necesitas.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+
+      {services.map((service, i) => {
+        const message =
+          `Hola, quisiera información y una cotización para ${service.title.toLowerCase()}.`;
+
+        const wa =
+          `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+
+        return (
+          <div data-reveal="up" style={`--reveal-delay: ${i * 80}ms;`} >
+
+            <article
+              class="
+                service-card
+                group
+                h-full
+                overflow-hidden
+                rounded-[30px]
+                border
+                border-black/8
+                bg-white
+              "
+            >
+
+              <div class="relative overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  loading="lazy"
+                  class="service-card-image aspect-[4/3] w-full object-cover" />
+              </div>
+
+
+              <div class="p-6">
+                <p class="text-sm font-bold text-[var(--brand-orange)]" >
+                  {service.subtitle}
+                </p>
+
+                <h3 class="mt-2 text-2xl font-black tracking-[-.035em]" >
+                  {service.title}
+                </h3>
+
+
+                <ul class="mt-5 space-y-2 text-sm leading-6 text-neutral-600" >
+                  {service.points.map((point) => (
+                    <li class="flex gap-2">
+
+                      <span
+                        class="
+                          mt-[10px]
+                          h-1.5
+                          w-1.5
+                          shrink-0
+                          rounded-full
+                          bg-[var(--brand-green)]
+                        "
+                      ></span>
+
+                      {point}
+
+                    </li>
+                  ))}
+                </ul>
+
+
+                <a
+                  href={wa}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="
+                    mt-6
+                    inline-flex
+                    items-center
+                    gap-2
+                    text-sm
+                    font-extrabold
+                    transition-colors
+                    duration-300
+                    group-hover:text-[var(--brand-orange)]
+                  "
+                >
+                  Cotizar este letrero
+                  
+                  <span aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        );
+      })}
+
+    </div>
+
+  </div>
+</section>

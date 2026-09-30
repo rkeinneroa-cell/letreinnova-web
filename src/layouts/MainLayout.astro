@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${site.name} | Letreros publicitarios en Lima`,
+  description =
+    'Diseñamos, fabricamos e instalamos letreros publicitarios en Lima: luminosos, acrílico 3D, acero inoxidable, aluminio, MDF y PVC.'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <script is:inline> document.documentElement.classList.add('js')</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#111318" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/images/brand/logo-letreinnova.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      const revealElements = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            /*
+            * Solo animamos la primera vez.
+            * Así no resulta molesto al subir y bajar.
+            */
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.15,
+          rootMargin: '0px 0px -40px 0px'
+        }
+      );
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>

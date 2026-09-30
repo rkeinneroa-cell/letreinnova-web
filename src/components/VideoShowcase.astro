@@ -1,0 +1,37 @@
+---
+import { videos } from '../data/site';
+---
+<section id="videos" class="section-pad bg-[#111318] text-white">
+  <div class="container-site">
+    <div class="mb-12 grid gap-5 lg:grid-cols-[1fr_.7fr] lg:items-end">
+      <div data-reveal="left">
+        <p class="eyebrow text-[var(--brand-green)]">Proceso en movimiento</p>
+        <h2 class="section-title mt-4 max-w-3xl text-balance">También mostramos cómo nace cada proyecto.</h2>
+      </div>
+      <p class="text-base leading-7 text-white/60">Puedes colocar videos cortos de fabricación, instalación y resultados. No necesitas backend para reproducirlos.</p>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      {videos.map(video => (
+        <article class="overflow-hidden rounded-[28px] border border-white/10 bg-white/5" data-reveal="right">
+          {video.src ? (
+            <video class="aspect-[9/12] w-full object-cover" controls playsinline preload="metadata" poster={video.poster}>
+              <source src={video.src} type="video/mp4" />
+            </video>
+          ) : (
+            <div class="relative aspect-[9/12] overflow-hidden">
+              <img src={video.poster} alt="Espacio preparado para video" class="h-full w-full object-cover opacity-80" loading="lazy" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="grid h-16 w-16 place-items-center rounded-full bg-white text-2xl text-black shadow-xl">▶</span>
+              </div>
+            </div>
+          )}
+          <div class="p-5">
+            <h3 class="text-lg font-black">{video.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-white/55">Agrega el archivo MP4 o reemplázalo por un video embebido de YouTube/Facebook.</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
