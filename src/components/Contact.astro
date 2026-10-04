@@ -55,7 +55,7 @@ import { site, services } from '../data/site';
     </div>
 
 
-    <form id="whatsapp-form" class="contact-form" data-reveal="right">
+    <form id="whatsapp-form" data-whatsapp={site.whatsapp} class="contact-form" data-reveal="right">
 
       <div class="grid gap-5 md:grid-cols-2">
         <label class="contact-field">
@@ -105,11 +105,14 @@ import { site, services } from '../data/site';
   </div>
 </section>
 
-<script define:vars={{ whatsapp: site.whatsapp }}>
+<script>
   const form = document.querySelector<HTMLFormElement>('#whatsapp-form');
 
   form?.addEventListener('submit', (event) => {
     event.preventDefault();
+    const whatsapp = form.dataset.whatsapp;
+
+    if (!whatsapp) return;
 
     const name = (document.querySelector<HTMLInputElement>('#name')?.value || '').trim();
     const phone = (document.querySelector<HTMLInputElement>('#phone')?.value || '').trim();
@@ -120,12 +123,13 @@ import { site, services } from '../data/site';
       `Hola, soy ${name}. Quisiera una cotización para ${service}.`,
       phone ? `Mi teléfono es ${phone}.` : '',
       message ? `Detalle: ${message}` : ''
-    ].filter(Boolean).join('\n');
+    ]
+      .filter(Boolean)
+      .join('\n');
 
-    window.open(
-      `https://wa.me/${whatsapp}?text=${encodeURIComponent(text)}`,
-      '_blank',
-      'noopener,noreferrer'
-    );
+    const url =
+      `https://wa.me/${whatsapp}?text=${encodeURIComponent(text)}`;
+
+    window.location.href = url;
   });
 </script>

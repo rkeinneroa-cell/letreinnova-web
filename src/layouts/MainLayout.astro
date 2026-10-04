@@ -9,7 +9,7 @@ interface Props {
 const {
   title = `${site.name} | Letreros publicitarios en Lima`,
   description =
-    'Diseñamos, fabricamos e instalamos letreros publicitarios en Lima: luminosos, acrílico 3D, acero inoxidable, aluminio, MDF y PVC.'
+    'Diseñamos, fabricamos e instalamos letreros publicitarios en Lima y atendemos proyectos a nivel interprovincial: luminosos, acrílico 3D, acero inoxidable, aluminio, MDF y PVC.'
 } = Astro.props;
 ---
 <!doctype html>
@@ -33,16 +33,15 @@ const {
   <body>
     <slot />
     <script>
-      const revealElements = document.querySelectorAll<HTMLElement>('[data-reveal]');
-      const observer = new IntersectionObserver(
+      const revealElements =
+        document.querySelectorAll<HTMLElement>('[data-reveal]');
+
+      const revealObserver = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
+
             entry.target.classList.add('is-visible');
-            /*
-            * Solo animamos la primera vez.
-            * Así no resulta molesto al subir y bajar.
-            */
             observer.unobserve(entry.target);
           });
         },
@@ -51,8 +50,9 @@ const {
           rootMargin: '0px 0px -40px 0px'
         }
       );
+
       revealElements.forEach((element) => {
-        observer.observe(element);
+        revealObserver.observe(element);
       });
     </script>
   </body>
