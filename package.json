@@ -9,7 +9,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "optimize-images": "node tools/optimize-images.mjs",
-    "optimize-services": "node tools/optimize-services.mjs"
+    "optimize-services": "node tools/optimize-services.mjs",
+    "optimize-clients": "node tools/optimize-clients.mjs",
+    "optimize-hero": "node tools/optimize-hero.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

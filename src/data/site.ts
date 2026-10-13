@@ -18,69 +18,69 @@ export const site = {
 
 export const services = [
   {
-    slug: "acero-inoxidable",
-    title: "Letreros en Acero Inoxidable",
-    subtitle: "Máxima durabilidad y prestigio",
+    slug: "aluminio-retroiluminado-3d",
+    title: "Letreros 3D de Aluminio Retroiluminados",
+    subtitle: "Elegancia con efecto de luz posterior",
     image: "/images/projects/thumbs/dsm-consultores.webp",
     points: [
-      "Acabado espejo, cepillado o pulido",
-      "Alta resistencia al clima",
-      "Ideal para marcas premium, clínicas y empresas",
+      "Iluminación posterior que genera un elegante efecto halo",
+      "Fabricados en aluminio resistente y de acabado profesional",
+      "Ideales para fachadas, oficinas y marcas corporativas",
     ],
   },
   {
     slug: "acrilico-3d",
     title: "Letreros en Acrílico 3D",
-    subtitle: "Los más llamativos y personalizados",
+    subtitle: "Color, volumen y personalización",
     image: "/images/projects/thumbs/cardoso-clinica-dental.webp",
     points: [
-      "Colores vibrantes y acabados premium",
-      "Ideales para logos, marcas comerciales y decoración",
-      "Opción con iluminación LED",
+      "Colores vibrantes y acabados modernos",
+      "Ideales para logotipos, comercios y espacios interiores",
+      "Posibilidad de incorporar iluminación LED",
     ],
   },
   {
     slug: "aluminio-3d",
     title: "Letreros de Aluminio 3D",
-    subtitle: "Elegancia, sobriedad y resistencia",
-    image: "/images/services/rial-automotores.webp",
+    subtitle: "Elegancia, resistencia y presencia",
+    image: "/images/services/lorena-belleza-integral.webp",
     points: [
-      "Apariencia moderna y corporativa",
-      "Perfectos para oficinas, empresas y señalización",
-      "Uso interior y exterior",
+      "Acabado moderno y profesional para letras y logotipos",
+      "Material resistente para aplicaciones interiores y exteriores",
+      "Ideal para empresas, oficinas y fachadas comerciales",
     ],
   },
   {
     slug: "mdf-3d",
     title: "Letreros en MDF 3D",
-    subtitle: "Estilo cálido y decorativo",
-    image: "/images/projects/thumbs/señor-sazon.webp",
+    subtitle: "Estilo decorativo y versátil",
+    image: "/images/services/ricopet.webp",
     points: [
-      "Ideales para interiores y marcas creativas",
-      "Acabados pintados o naturales",
-      "Perfectos para cafeterías, boutiques y estudios",
+      "Ideales para interiores y proyectos personalizados",
+      "Disponibles en diferentes acabados, colores y espesores",
+      "Perfectos para cafeterías, tiendas, estudios y decoración comercial",
     ],
   },
   {
     slug: "luminosos",
     title: "Letreros Luminosos",
     subtitle: "Máxima visibilidad de día y de noche",
-    image: "/images/projects/thumbs/golstar.webp",
+    image: "/images/services/wong-town.webp",
     points: [
-      "Iluminación LED de alto impacto",
-      "Perfectos para negocios, locales y marcas que quieren destacar",
-      "Mayor recordación visual",
+      "Iluminación LED de alto impacto y bajo consumo",
+      "Mayor visibilidad para negocios y locales comerciales",
+      "Diseños personalizados según la identidad de cada marca",
     ],
   },
   {
-    slug: "pvc",
-    title: "Letreros en PVC",
-    subtitle: "Versátiles, ligeros y modernos",
-    image: "/images/services/onco-vip.webp",
+    slug: "doble-iluminacion-3d",
+    title: "Letras 3D con Doble Iluminación",
+    subtitle: "Iluminación frontal y retroiluminada",
+    image: "/images/projects/thumbs/golstar.webp",
     points: [
-      "Excelente relación precio–impacto",
-      "Ideales para interiores, logos y señalización",
-      "Acabados limpios y profesionales",
+      "Combina iluminación frontal y efecto halo posterior",
+      "Mayor impacto visual tanto de día como de noche",
+      "Ideal para marcas que buscan un acabado moderno y premium",
     ],
   },
 ];
@@ -122,19 +122,19 @@ export const projects: Project[] = [
     layout: "square",
   },
   {
-    title: "Mango",
-    category: "Letras 3D",
-    thumb: "/images/projects/thumbs/Centinela-de-El-Oro.webp",
-    full: "/images/projects/full/Centinela-de-El-Oro.webp",
-    alt: "Letrero de Centinela de El Oro",
+    title: "Él",
+    category: "Letrero luminoso 3D",
+    thumb: "/images/projects/thumbs/el.webp",
+    full: "/images/projects/full/el.webp",
+    alt: "Letrero instalado para Él",
     layout: "square",
   },
   {
-    title: "Ciudad Sonrisas",
-    category: "Letras corporativas",
-    thumb: "/images/projects/thumbs/ciudad-sonrisas.webp",
-    full: "/images/projects/full/ciudad-sonrisas.webp",
-    alt: "Letras corporativas instaladas para Ciudad Sonrisas",
+    title: "Wong Town",
+    category: "Letras acrílico 3D",
+    thumb: "/images/projects/thumbs/wong-town-fachada.webp",
+    full: "/images/projects/full/wong-town-fachada.webp",
+    alt: "Letras acrílico 3D instaladas para Wong Town",
     layout: "tall",
   },
   {
@@ -154,6 +154,14 @@ export const projects: Project[] = [
     layout: "square",
   },
   {
+    title: "Patty Wong",
+    category: "Letrero luminoso 3D",
+    thumb: "/images/projects/thumbs/patty-wong.webp",
+    full: "/images/projects/full/patty-wong.webp",
+    alt: "Letrero luminoso 3D instalado para Patty Wong",
+    layout: "square",
+  },
+  {
     title: "Albert Einstein",
     category: "Letras corporativas",
     thumb: "/images/projects/thumbs/albert-einstein.webp",
@@ -162,21 +170,22 @@ export const projects: Project[] = [
     layout: "square",
   },
   {
-    title: "Urban Restaurant",
-    category: "Letras 3D",
-    thumb: "/images/projects/thumbs/urban-restaurant.webp",
-    full: "/images/projects/full/urban-restaurant.webp",
-    alt: "Letrero instalado para Urban Restaurant",
-    layout: "banner",
-  },
-  {
     title: "Aloha",
-    category: "Letrero luminoso",
+    category: "Letras acrílico 3D",
     thumb: "/images/projects/thumbs/aloha.webp",
     full: "/images/projects/full/aloha.webp",
-    alt: "Letrero luminoso instalado para Aloha",
+    alt: "Letrero acrílico instalado para Aloha",
     layout: "square",
   },
+  {
+    title: "Urban Restaurant",
+    category: "Letras acrílico 3D",
+    thumb: "/images/projects/thumbs/urban-restaurant.webp",
+    full: "/images/projects/full/urban-restaurant.webp",
+    alt: "Letrero acrílico instalado para Urban Restaurant",
+    layout: "banner",
+  },
+
   {
     title: "Lalo's Cevichería",
     category: "Letrero luminoso",
@@ -187,19 +196,19 @@ export const projects: Project[] = [
   },
   {
     title: "Sol y Mar",
-    category: "Letras 3D",
+    category: "Letras acrílico 3D",
     thumb: "/images/projects/thumbs/sol-y-mar.webp",
     full: "/images/projects/full/sol-y-mar.webp",
-    alt: "Letrero instalado para Sol y Mar",
+    alt: "Letrero acrílico instalado para Sol y Mar",
     layout: "square",
   },
 
   {
-    title: "Kexfarma Botica",
-    category: "Letrero corporativo",
-    thumb: "/images/projects/thumbs/kexfarma-botica.webp",
-    full: "/images/projects/full/kexfarma-botica.webp",
-    alt: "Letrero corporativo instalado para Kexfarma Botica",
+    title: "Fushion Wong",
+    category: "Letrero luminoso 3D",
+    thumb: "/images/projects/thumbs/fushion-wong.webp",
+    full: "/images/projects/full/fushion-wong.webp",
+    alt: "Letrero luminoso instalado para Fushion Wong",
     layout: "tall",
   },
   {
@@ -213,15 +222,15 @@ export const projects: Project[] = [
 
   {
     title: "DSM Consultores",
-    category: "Letras corporativas",
+    category: "Letras acrílico 3D retroiluminadas",
     thumb: "/images/projects/thumbs/dsm-consultores.webp",
     full: "/images/projects/full/dsm-consultores.webp",
-    alt: "Letrero corporativo instalado para DSM Consultores",
+    alt: "Letrero retroiluminadas instalado para DSM Consultores",
     layout: "square",
   },
   {
     title: "Anticuchería D'Kyara",
-    category: "Letrero luminoso",
+    category: "Letrero doble iluminación",
     thumb: "/images/projects/thumbs/anticucheria-dkyara.webp",
     full: "/images/projects/full/anticucheria-dkyara.webp",
     alt: "Letrero luminoso instalado para Anticuchería D'Kyara",
@@ -251,6 +260,22 @@ export const projects: Project[] = [
     alt: "Letrero corporativo instalado para CPE Endocrinología",
     layout: "square",
   },
+  {
+    title: "Hong Yi",
+    category: "Letrero luminoso 3D",
+    thumb: "/images/projects/thumbs/hong-yi.webp",
+    full: "/images/projects/full/hong-yi.webp",
+    alt: "Letrero luminoso instalado para Hong Yi",
+    layout: "square",
+  },
+  {
+    title: "Centro Renzulli",
+    category: "Letrero acrílico 3D",
+    thumb: "/images/projects/thumbs/centro-renzulli.webp",
+    full: "/images/projects/full/centro-renzulli.webp",
+    alt: "Letrero acrílico instalado para Centro Renzulli",
+    layout: "square",
+  },
   // {
   //   title: "Parque Espacial KRI",
   //   category: "Letrero luminoso",
@@ -261,7 +286,70 @@ export const projects: Project[] = [
   // },
 ];
 
-export const clients = Array.from({ length: 10 }, (_, index) => ({
-  name: `Cliente ${String(index + 1).padStart(2, "0")}`,
-  logo: `/images/clients/cliente-${String(index + 1).padStart(2, "0")}.svg`,
-}));
+export const clients = [
+  {
+    name: "El",
+    logo: "/images/clients/el.webp",
+  },
+  {
+    name: "Vittoria Cafetería",
+    logo: "/images/clients/vittoria-cafeteria.webp",
+  },
+  {
+    name: "Wakamono",
+    logo: "/images/clients/wakamono.webp",
+  },
+  {
+    name: "Ricopet",
+    logo: "/images/clients/ricopet.webp",
+  },
+  {
+    name: "AFC",
+    logo: "/images/clients/afc.webp",
+  },
+  {
+    name: "Torito Anticuchería",
+    logo: "/images/clients/torito-anticucheria.webp",
+  },
+  {
+    name: "Sisa Dermoestética",
+    logo: "/images/clients/sisa-dermoestetica.webp",
+  },
+  {
+    name: "Walon",
+    logo: "/images/clients/walon.webp",
+    contrast: "dark",
+  },
+  {
+    name: "Tai Loy",
+    logo: "/images/clients/tai-loy.webp",
+  },
+  {
+    name: "Golstar",
+    logo: "/images/clients/golstar.webp",
+    contrast: "dark",
+  },
+  {
+    name: "Cardoso Clínica Dental",
+    logo: "/images/clients/dental-cardoso.webp",
+  },
+  {
+    name: "D'Patas",
+    logo: "/images/clients/d-patas.webp",
+    contrast: "dark",
+  },
+
+  // Agregar los archivos cuando tengamos sus logos preparados.
+  // {
+  //   name: "Hong Yi",
+  //   logo: "/images/clients/hong-yi.jpg",
+  // },
+  // {
+  //   name: "Wong Town",
+  //   logo: "/images/clients/wong-town.jpg",
+  // },
+  // {
+  //   name: "Patty Wong",
+  //   logo: "/images/clients/patty-wong.jpg",
+  // },
+];

@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site';
+import Clients from './Clients.astro';
 
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
   site.whatsappMessage
@@ -8,11 +9,11 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
 
 <section
   id="inicio"
-  class="relative min-h-[780px] overflow-hidden bg-[#111318] text-white"
+  class="hero-section relative overflow-hidden bg-[#111318] text-white"
 >
   <!-- IMAGEN DE FONDO -->
   <img
-    src="/images/hero/mifarma.jpg"
+    src="/images/hero/wong.webp"
     alt="Letrero corporativo realizado por LetreInnova"
     class="absolute inset-0 h-full w-full object-cover object-center"
   />
@@ -22,13 +23,13 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
     class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25"
   ></div>
 
-  <!-- OSCURECIDO GENERAL SUAVE -->
+  <!-- OSCURECIDO GENERAL -->
   <div class="absolute inset-0 bg-black/15"></div>
 
-  <!-- CONTENIDO -->
-  <div
-    class="container-site relative z-10 flex min-h-[780px] items-center pt-32 pb-20"
-  >
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="container-site hero-content relative z-10 flex items-center">
+
     <div class="max-w-[760px]">
 
       <div class="mb-6 flex items-center gap-3">
@@ -53,6 +54,7 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
         su fachada en una herramienta de venta.
       </p>
 
+
       <div class="mt-9 flex flex-wrap gap-3">
 
         <a
@@ -75,6 +77,7 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
 
       </div>
 
+
       <div
         class="mt-12 flex flex-wrap gap-x-10 gap-y-4
                border-t border-white/15 pt-8 text-sm text-white/65"
@@ -85,5 +88,11 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
       </div>
 
     </div>
+
   </div>
+
+
+  <!-- PASARELA DE CLIENTES -->
+  <Clients />
+
 </section>

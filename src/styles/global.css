@@ -129,6 +129,280 @@ html.js [data-reveal].is-visible {
 }
 
 /* =========================================
+   CLIENTS / HERO MARQUEE
+   ========================================= */
+
+.hero-section {
+  min-height: 860px;
+}
+
+.hero-content {
+  min-height: 860px;
+  padding-top: 128px;
+  padding-bottom: 210px;
+}
+
+/* =========================================
+   PASARELA
+   ========================================= */
+
+.clients-strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 12;
+
+  width: 100%;
+  padding: 18px 0 28px;
+
+  background: transparent;
+}
+
+/* TÍTULO */
+
+.clients-strip-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(520px, calc(100% - 40px));
+
+  margin: 0 auto 22px;
+
+  gap: 16px;
+}
+
+.clients-strip-label span {
+  display: block;
+  width: 100%;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.clients-strip-label p {
+  margin: 0;
+
+  flex-shrink: 0;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   VIEWPORT
+   ========================================= */
+
+.clients-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* =========================================
+   TRACK
+   ========================================= */
+
+.clients-marquee-track {
+  display: flex;
+  width: max-content;
+
+  animation: clients-marquee-scroll 38s linear infinite;
+
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* =========================================
+   GRUPOS
+   ========================================= */
+
+.clients-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+
+  gap: clamp(70px, 7vw, 130px);
+
+  padding-right: clamp(70px, 7vw, 130px);
+}
+
+/* =========================================
+   LOGOS
+   ========================================= */
+
+.client-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 150px;
+
+  width: 150px;
+  height: 62px;
+}
+
+.client-logo-image {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 160px;
+  max-height: 58px;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 300ms ease;
+}
+
+/* LOGOS OSCUROS COMO GOLSTAR */
+
+.client-logo-needs-contrast {
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+}
+
+/* HOVER */
+
+.client-logo-item:hover .client-logo-image {
+  transform: translate3d(0, -2px, 0) scale(1.04);
+}
+
+/* Pausar al poner mouse */
+/* 
+.clients-marquee:hover .clients-marquee-track {
+  animation-play-state: paused;
+} */
+
+/* =========================================
+   ANIMACIÓN
+   ========================================= */
+
+@keyframes clients-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1023px) {
+  .hero-section {
+    min-height: 820px;
+  }
+
+  .hero-content {
+    min-height: 820px;
+    padding-top: 120px;
+    padding-bottom: 190px;
+  }
+
+  .clients-marquee-group {
+    gap: 58px;
+    padding-right: 58px;
+  }
+
+  .client-logo-item {
+    flex-basis: 130px;
+    width: 130px;
+  }
+
+  .client-logo-image {
+    max-width: 135px;
+    max-height: 50px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 0;
+  }
+
+  .hero-content {
+    min-height: 720px;
+    padding-top: 110px;
+    padding-bottom: 70px;
+  }
+
+  .clients-strip {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    padding: 18px 0 24px;
+  }
+
+  .clients-strip-label {
+    width: calc(100% - 30px);
+
+    margin-bottom: 18px;
+
+    gap: 10px;
+  }
+
+  .clients-strip-label p {
+    font-size: 8px;
+    letter-spacing: 0.13em;
+  }
+
+  .clients-marquee-group {
+    gap: 36px;
+    padding-right: 36px;
+  }
+
+  .client-logo-item {
+    flex-basis: 105px;
+
+    width: 105px;
+    height: 46px;
+  }
+
+  .client-logo-image {
+    max-width: 110px;
+    max-height: 42px;
+  }
+
+  .clients-marquee-track {
+    animation-duration: 30s;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-marquee-track {
+    animation: none;
+  }
+}
+
+/* =========================================
    SERVICE CARDS
    ========================================= */
 .service-card {
