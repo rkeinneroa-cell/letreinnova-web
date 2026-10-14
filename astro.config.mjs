@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://letreinnova.netlify.app",
+  site: "https://letreinnova.com",
 
   output: "static",
 
